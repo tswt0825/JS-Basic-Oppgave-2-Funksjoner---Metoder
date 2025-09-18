@@ -32,6 +32,21 @@ function kontrollerTall(tall) {
 console.log(kontrollerTall(6));
 console.log(kontrollerTall(3));
 
+const kontrollerTallArrow = (tall) => {
+  return tall % 2 === 0 ? "Partall" : "Oddetall";
+};
+
+console.log(kontrollerTallArrow(3));
+console.log(kontrollerTallArrow(8));
+
+//funkjson som henter input og viser resultat
+
+function sjekk() {
+  const tall = document.getElementById("tallInput").value;
+  const resultatTekst = kontrollerTallArrow(tall);
+  document.getElementById("resultat").textContent =
+    "Tallet " + tall + " er et " + resultatTekst;
+}
 /******************************************************************************
 2.
 
