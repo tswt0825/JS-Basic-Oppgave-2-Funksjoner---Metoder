@@ -61,6 +61,19 @@ Eksempel: "Dette er kult" skal returnere "DETTE ER KULT!"
 
 // Skriv koden for oppgave 2 her
 
+function capsLock(tekst) {
+  return tekst.toUpperCase() + "!";
+}
+console.log(capsLock("dette er kult"));
+console.log(capsLock("jeg liker is"));
+console.log(capsLock("kodehode er så kjekt"));
+// Arrow function
+const capsLockArrow = (tekst) => tekst.toUpperCase();
+const capsLow = (tekst) => tekst.toLowerCase();
+
+console.log(capsLockArrow("jeg liker deg arrow funksjon"));
+console.log(capsLow("JEG ER VELDIG MORSOM"));
+
 /******************************************************************************
 3.
 
@@ -85,6 +98,48 @@ Hvis ingen timeverdi mottas, skal funksjonen returnere en feilmelding.
 
 // Skriv koden for oppgave 3 her
 
+function helloFriend(navn, time) {
+  if (time === undefined) {
+    return "feil: Ingen timeverdi motatt";
+  }
+
+  if (time < 0 || time > 23) {
+    return "ugyldig tid";
+  }
+
+  if (time >= 0 && time <= 5) {
+    return "God natt " + navn;
+  } else if (time >= 6 && time <= 11) {
+    return "God morgen " + navn;
+  } else if (time >= 12 && time <= 17) {
+    return "God dag " + navn;
+  } else {
+    return "God kveld " + navn;
+  }
+}
+
+console.log(helloFriend("Therese", 16));
+console.log(helloFriend("Linea", 1));
+console.log(helloFriend("Liam", 19));
+console.log(helloFriend("Pål", 7));
+console.log(helloFriend("Therese", 24));
+
+// Arrow function
+
+const helloArrow = (forNavn, tid) => {
+  if (tid === undefined) return "Feil: Ingen timeverdi mottatt.";
+  if (tid < 0 || tid > 23) return "Ugyldig tid";
+  if (tid <= 5) return `God natt ${forNavn}`;
+  if (tid <= 11) return `God Morgen ${forNavn}`;
+  if (tid <= 17) return `God dag ${forNavn}`;
+  return `God kveld ${forNavn}`;
+};
+
+console.log(helloArrow("Tess", 6));
+console.log(helloArrow("Liam", 12));
+console.log(helloArrow("Shrek", 18));
+console.log(helloArrow("Batman", 24));
+console.log(helloArrow("Spiderman"));
 /******************************************************************************
 4.
 
@@ -101,6 +156,21 @@ Eksempel 2: ["En", "To", "Tre", "Fire", "Fem", "Seks"] skal returnere
 ******************************************************************************/
 
 // Skriv koden for oppgave 4 her
+
+function ytterPunkter(arr) {
+  if (arr.length <= 2) {
+    return [];
+  }
+  return arr.slice(1, arr.length - 1);
+}
+
+console.log(ytterPunkter(["rød", "blå", "Lilla", "Oransje", "grønn"]));
+console.log(ytterPunkter([1, 2, 3, 4, 5, 6]));
+
+const fjernYtterPunkter = (heis) => (heis.length <= 2 ? [] : heis.slice(1, -1));
+
+console.log(fjernYtterPunkter(["rød", "Grønn", "Blå", "Gul"]));
+console.log(fjernYtterPunkter(["En", "To", "Tre", "Fire", "Fem", "Seks"]));
 
 /******************************************************************************
 5.
@@ -122,6 +192,21 @@ Eksempel 3: "   vanskelig        " skal returnere "gøy".
 ******************************************************************************/
 
 // Skriv koden for oppgave 5 her
+
+function erstattOrdet(ord) {
+  let ryddet = ord.trim();
+  let oppdatert = ryddet.replace("vanskelig", "gøy");
+  return oppdatert;
+}
+
+console.log(erstattOrdet("  Javaskript er vanskelig  "));
+console.log(erstattOrdet("  Det er vanskelig å bruke metoder  "));
+console.log(erstattOrdet("   vanskelig   "));
+
+const erstattOrdetArrow = (word) =>
+  word.trim().replace("kjedelig", "spennende");
+
+console.log(erstattOrdetArrow("Kodehode er kjedelig "));
 
 /******************************************************************************
 6.
@@ -147,6 +232,19 @@ Ekstra utfordring: Lag et nytt array som kun inkluderer elementer som inneholder
 ******************************************************************************/
 
 // Skriv koden for oppgave 6 her
+const firstItems = items.shift();
+console.log(items);
+
+const itemsViskelær = items.indexOf("Viskelær");
+if (itemsViskelær !== -1) {
+  items[itemsViskelær] = "Linjal";
+}
+
+items.splice(0, 2, "Markeringspenn");
+
+console.log(items)
+
+
 
 /******************************************************************************
 7.
