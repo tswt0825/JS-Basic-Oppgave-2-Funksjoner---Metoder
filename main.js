@@ -32,6 +32,7 @@ function kontrollerTall(tall) {
 console.log(kontrollerTall(6));
 console.log(kontrollerTall(3));
 
+//ARROW function Partall - oddetall
 const kontrollerTallArrow = (tall) => {
   return tall % 2 === 0 ? "Partall" : "Oddetall";
 };
@@ -119,10 +120,10 @@ function helloFriend(navn, time) {
 }
 
 console.log(helloFriend("Therese", 16));
-console.log(helloFriend("Linea", 1));
-console.log(helloFriend("Liam", 19));
-console.log(helloFriend("Pål", 7));
-console.log(helloFriend("Therese", 24));
+console.log(helloFriend("Ironman", 1));
+console.log(helloFriend("Batman", 19));
+console.log(helloFriend("Medusa", 7));
+console.log(helloFriend("Hulk", 24));
 
 // Arrow function
 
@@ -140,6 +141,7 @@ console.log(helloArrow("Liam", 12));
 console.log(helloArrow("Shrek", 18));
 console.log(helloArrow("Batman", 24));
 console.log(helloArrow("Spiderman"));
+
 /******************************************************************************
 4.
 
@@ -232,20 +234,28 @@ Ekstra utfordring: Lag et nytt array som kun inkluderer elementer som inneholder
 ******************************************************************************/
 
 // Skriv koden for oppgave 6 her
+//1
 const firstItems = items.shift();
 console.log(items);
 
+//2
 const itemsViskelær = items.indexOf("Viskelær");
 if (itemsViskelær !== -1) {
   items[itemsViskelær] = "Linjal";
 }
 
+//3
 items.splice(0, 2, "Markeringspenn");
+console.log(items);
 
-console.log(items)
+//4
+const kombinert = items.join(" | ");
+console.log(kombinert);
 
+//5
+const medE = items.filter((item) => item.toLowerCase().includes("e"));
 
-
+console.log(medE);
 /******************************************************************************
 7.
 
@@ -299,3 +309,15 @@ Returner "😎Kun primitive verdier😎".
 ******************************************************************************/
 
 // Skriv koden for oppgave 8 her
+
+function isPalindrome(word) {
+  const baklengs = word.split("").reverse().join("");
+  if (word === baklengs) {
+    return `${word} is a palindrome`;
+  } else {
+    return `${word} is not a palindrome`;
+  }
+}
+
+console.log(isPalindrome("racecar")); // Racecar is a palindrome
+console.log(isPalindrome("banana")); // Banana is not a palindrome
