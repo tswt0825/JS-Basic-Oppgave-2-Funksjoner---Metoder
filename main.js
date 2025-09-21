@@ -310,6 +310,10 @@ Returner "😎Kun primitive verdier😎".
 
 // Skriv koden for oppgave 8 her
 
+
+
+
+//Noe vi øvde på i timen
 function isPalindrome(word) {
   const baklengs = word.split("").reverse().join("");
   if (word === baklengs) {
